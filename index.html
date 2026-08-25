@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Masked After Dark</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #090909;
+      color: white;
+    }
+
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(#111, #090909);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .subscribe {
+      margin-top: 30px;
+      background: #d4af37;
+      color: #000;
+      border: none;
+      padding: 15px 30px;
+      font-size: 17px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .feed {
+      max-width: 650px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .post {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+
+    .post-header {
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    .post-image {
+      height: 350px;
+      background: linear-gradient(135deg, #292929, #111);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #777;
+      font-size: 18px;
+    }
+
+    .post-body {
+      padding: 15px;
+    }
+
+    .locked {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .locked-icon {
+      font-size: 40px;
+    }
+
+    .locked p {
+      color: #aaa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #666;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    MASKED <span>AFTER DARK</span>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Welcome After Dark</h1>
+
+  <p>
+    Exclusive content from Masked After Dark.
+    Subscribe for access to members-only posts.
+  </p>
+
+  <button class="subscribe" onclick="subscribe()">
+    Subscribe — $9.99/month
+  </button>
+</section>
+
+<main class="feed">
+
+  <article class="post">
+    <div class="post-header">
+      Masked After Dark
+    </div>
+
+    <div class="post-image">
+      Your photo or video will appear here
+    </div>
+
+    <div class="post-body">
+      <strong>Welcome to Masked After Dark.</strong>
+      <p>Our first public post.</p>
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-header">
+      Members Only
+    </div>
+
+    <div class="locked">
+      <div class="locked-icon">🔒</div>
+
+      <h2>Exclusive Content</h2>
+
+      <p>
+        Subscribe to unlock this post.
+      </p>
+
+      <button class="subscribe" onclick="subscribe()">
+        Unlock Content
+      </button>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  © 2026 Masked After Dark
+</footer>
+
+<script>
+  function subscribe() {
+    alert(
+      "Payments aren't connected yet. We'll connect the subscription system next."
+    );
+  }
+</script>
+
+</body>
+</html>
