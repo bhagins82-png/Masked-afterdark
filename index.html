@@ -326,7 +326,18 @@
     </button>
   </section>
 
+<section id="creatorDashboard" class="creator-bar" style="display:none;">
+  <h3>Creator Dashboard</h3>
+  <p>You are logged in as the creator.</p>
 
+  <button class="gold-btn" onclick="showCreatePost()">
+    + Create New Post
+  </button>
+
+  <button class="dark-btn" onclick="creatorLogout()" style="margin-top:10px;">
+    Log Out
+  </button>
+</section>
   <main class="feed">
 
     <article class="post">
@@ -507,6 +518,7 @@
 
     alert("Creator login successful!");
     closeModals();
+    document.getElementById("creatorDashboard").style.display = "block";
     }
    </script> 
   
