@@ -444,10 +444,9 @@
         Next we'll connect secure authentication so only you can access this area.
       </p>
 
-      <input class="field" type="email" placeholder="Creator email">
-      <input class="field" type="password" placeholder="Password">
-
-      <button class="gold-btn" style="max-width:none" onclick="creatorDemo()">
+      <input id="creatorEmail" class="field" type="email" placeholder="Email">
+     <input id="creatorPassword" class="field" type="password" placeholder="Password"> 
+      <button class="gold-btn" style="max-width:none;" onclick="creatorLogin()">
         Creator Login
       </button>
 
@@ -492,8 +491,22 @@
       alert("Member authentication is not connected yet.");
     }
 
-    function creatorDemo() {
-      alert("Creator authentication is not connected yet.");
+    async function creatorLogin() {
+    const email = document.getElementById("creatorEmail").value;
+    const password = document.getElementById("creatorPassword").value;
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        alert("Login failed: " + error.message);
+        return;
+    }
+
+    alert("Creator login successful!");
+    closeModals();
     }
    </script> 
   
