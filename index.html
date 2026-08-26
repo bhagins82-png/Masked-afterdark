@@ -55,8 +55,7 @@
     .hero {
       padding: 55px 20px 45px;
       text-align: center;
-      background:
-        radial-gradient(circle at top, #242017 0%, #0c0c0c 45%, #080808 100%);
+      background: radial-gradient(circle at top, #242017 0%, #0c0c0c 45%, #080808 100%);
     }
 
     .hero h1 {
@@ -75,46 +74,8 @@
 
     .gold-btn {
       margin-top: 26px;
-      width: 100%;
-      max-width: 360px;
-      background: #ddb936;
-      color: #080808;
-      border: 0;
-      border-radius: 10px;
-      padding: 15px 22px;
-      font-size: 17px;
-      font-weight: 900;
-      cursor: pointer;
-    }
-
-    .price-note {
-      margin-top: 10px;
-      color: #777;
-      font-size: 13px;
-    }
-
-    .feed {
-      width: min(680px, calc(100% - 28px));
-      margin: 0 auto;
-      padding: 28px 0 80px;
-    }
-
-    .post {
-      overflow: hidden;
-      margin-bottom: 24px;
-      background: #141414;
-      border: 1px solid #292929;
-      border-radius: 16px;
-    }
-
-    .post-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 15px;
-    }
-
-    .avatar {
+      width: 100
+          .avatar {
       width: 42px;
       height: 42px;
       display: grid;
@@ -142,8 +103,7 @@
       padding: 25px;
       text-align: center;
       color: #777;
-      background:
-        linear-gradient(145deg, #242424, #101010);
+      background: linear-gradient(145deg, #242424, #101010);
     }
 
     .post-copy {
@@ -153,16 +113,350 @@
     }
 
     .locked {
-      position: relative;
       min-height: 350px;
       display: grid;
       place-items: center;
       text-align: center;
       padding: 28px;
-      background:
-        linear-gradient(rgba(8,8,8,.65), rgba(8,8,8,.95)),
-        linear-gradient(135deg, #393939, #111);
+      background: linear-gradient(135deg, #292929, #0b0b0b);
     }
 
     .lock-box {
       max-width: 330px;
+    }
+
+    .lock-icon {
+      font-size: 46px;
+    }
+
+    .locked p {
+      color: #aaa;
+      line-height: 1.5;
+    }
+
+    .small-btn {
+      background: #ddb936;
+      color: #000;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 900;
+    }
+
+    .creator-bar {
+      width: min(680px, calc(100% - 28px));
+      margin: 25px auto 0;
+      padding: 16px;
+      background: #111;
+      border: 1px solid #2b2b2b;
+      border-radius: 12px;
+    }
+
+    .creator-bar h3 {
+      margin: 0 0 8px;
+    }
+
+    .creator-bar p {
+      margin: 0 0 12px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .dark-btn {
+      border: 1px solid #555;
+      background: #191919;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,.85);
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-card {
+      width: min(440px, 100%);
+      background: #161616;
+      border: 1px solid #343434;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .modal-card p {
+      color: #999;
+    }
+
+    .field {
+      width: 100%;
+      margin: 7px 0;
+      padding: 13px;
+      border-radius: 8px;
+      border: 1px solid #393939;
+      background: #0c0c0c;
+      color: white;
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 30px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    MASKED <span>AFTER DARK</span>
+  </div>
+
+  <button class="login-btn" onclick="openLogin()">
+    Log in
+  </button>
+</header>
+
+<section class="hero">
+  <h1>Welcome After Dark</h1>
+
+  <p>
+    Exclusive content, private posts and members-only access
+    from Masked After Dark.
+  </p>
+
+  <button class="gold-btn" onclick="openSubscribe()">
+    Subscribe — $9.99/month
+  </button>
+
+  <div class="price-note">Cancel anytime</div>
+</section>
+<section class="creator-bar">
+  <h3>Creator Dashboard</h3>
+
+  <p>
+    Your private area for uploading photos,
+    videos and creating member posts.
+  </p>
+
+  <button class="dark-btn" onclick="openCreator()">
+    Creator Login
+  </button>
+</section>
+
+<main class="feed">
+
+  <article class="post">
+    <div class="post-head">
+      <div class="avatar">M</div>
+
+      <div>
+        <div class="post-name">Masked After Dark</div>
+        <div class="post-time">Public post</div>
+      </div>
+    </div>
+
+    <div class="media">
+      Your public photo or video will appear here
+    </div>
+
+    <div class="post-copy">
+      Welcome to Masked After Dark. Public posts can be viewed by anyone.
+    </div>
+  </article>
+
+  <article class="post">
+    <div class="post-head">
+      <div class="avatar">M</div>
+
+      <div>
+        <div class="post-name">Masked After Dark</div>
+        <div class="post-time">Members only</div>
+      </div>
+    </div>
+
+    <div class="locked">
+      <div class="lock-box">
+        <div class="lock-icon">🔒</div>
+
+        <h2>Members Only</h2>
+
+        <p>
+          Subscribe to unlock exclusive photos, videos and posts.
+        </p>
+
+        <button class="small-btn" onclick="openSubscribe()">
+          Unlock This Post
+        </button>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<footer>
+  © 2026 Masked After Dark
+</footer>
+
+
+<div class="modal" id="subscribeModal">
+  <div class="modal-card">
+
+    <h2>Join Masked After Dark</h2>
+
+    <p>Membership is $9.99 per month.</p>
+
+    <input
+      class="field"
+      type="email"
+      placeholder="Email address"
+    >
+
+    <button
+      class="gold-btn"
+      style="max-width:none"
+      onclick="paymentDemo()"
+    >
+      Continue to Payment
+    </button>
+
+    <button
+      class="dark-btn"
+      onclick="closeModals()"
+      style="width:100%; margin-top:10px;"
+    >
+      Cancel
+    </button>
+
+  </div>
+</div>
+
+
+<div class="modal" id="loginModal">
+  <div class="modal-card">
+
+    <h2>Member Login</h2>
+
+    <input
+      class="field"
+      type="email"
+      placeholder="Email"
+    >
+
+    <input
+      class="field"
+      type="password"
+      placeholder="Password"
+    >
+
+    <button
+      class="gold-btn"
+      style="max-width:none"
+      onclick="loginDemo()"
+    >
+      Log In
+    </button>
+
+    <button
+      class="dark-btn"
+      onclick="closeModals()"
+      style="width:100%; margin-top:10px;"
+    >
+      Cancel
+    </button>
+
+  </div>
+</div>
+<div class="modal" id="creatorModal">
+  <div class="modal-card">
+
+    <h2>Creator Dashboard</h2>
+
+    <p>
+      Secure creator authentication will be connected next.
+    </p>
+
+    <input
+      class="field"
+      type="email"
+      placeholder="Creator email"
+    >
+
+    <input
+      class="field"
+      type="password"
+      placeholder="Password"
+    >
+
+    <button
+      class="gold-btn"
+      style="max-width:none"
+      onclick="creatorDemo()"
+    >
+      Creator Login
+    </button>
+
+    <button
+      class="dark-btn"
+      onclick="closeModals()"
+      style="width:100%; margin-top:10px;"
+    >
+      Cancel
+    </button>
+
+  </div>
+</div>
+
+
+<script>
+
+function closeModals() {
+  document.querySelectorAll(".modal").forEach(function(modal) {
+    modal.classList.remove("open");
+  });
+}
+
+function openSubscribe() {
+  closeModals();
+  document.getElementById("subscribeModal").classList.add("open");
+}
+
+function openLogin() {
+  closeModals();
+  document.getElementById("loginModal").classList.add("open");
+}
+
+function openCreator() {
+  closeModals();
+  document.getElementById("creatorModal").classList.add("open");
+}
+
+function paymentDemo() {
+  alert("Payment setup is coming next. No charge has been made.");
+}
+
+function loginDemo() {
+  alert("Member authentication will be connected next.");
+}
+
+function creatorDemo() {
+  alert("Creator authentication will be connected next.");
+}
+
+</script>
+
+</body>
+</html>
