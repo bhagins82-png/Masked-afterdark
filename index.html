@@ -469,7 +469,36 @@
     </div>
 
   </div>
+<div class="modal" id="createPostModal">
+  <div class="modal-card">
+    <h2>Create New Post</h2>
 
+    <input
+      id="postFile"
+      class="field"
+      type="file"
+      accept="image/*,video/*"
+    >
+
+    <textarea
+      id="postCaption"
+      class="field"
+      placeholder="Write a caption..."
+      rows="4"
+    ></textarea>
+
+    <select id="postAccess" class="field">
+      <option value="public">Public post</option>
+      <option value="members">Members only</option>
+      <option value="paid">Paid post</option>
+    </select>
+
+    <div class="modal-actions">
+      <button class="dark-btn" onclick="closeModals()">Cancel</button>
+      <button class="gold-btn" onclick="publishPost()">Publish</button>
+    </div>
+  </div>
+</div>
 
   <script>
 
