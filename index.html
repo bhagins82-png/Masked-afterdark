@@ -521,8 +521,13 @@
     document.getElementById("creatorDashboard").style.display = "block";
     }
   function showCreatePost() {
-  alert("Create Post form is the next step.");
-  }
+  closeModals();
+  document.getElementById("createPostModal").classList.add("open");
+}
+
+function publishPost() {
+  alert("Publish is connected next.");
+    }
   </script> 
   
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
