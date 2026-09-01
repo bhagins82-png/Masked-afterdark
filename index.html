@@ -554,9 +554,44 @@
   document.getElementById("createPostModal").classList.add("open");
 }
 
-function publishPost() {
-  alert("Publish is connected next.");
-    }
+async function publishPost() {
+  const modal = document.getElementById("createPostModal");
+  const captionBox = modal.querySelector("textarea");
+  const caption = captionBox ? captionBox.value.trim() : "";
+
+  if (!caption) {
+    alert("Please enter a caption.");
+    return;
+  }
+
+  const {
+    data: { user },
+    error: userError
+  } = await supabaseClient.auth.getUser();
+
+  if (userError || !user) {
+    alert("Please log in before publishing.");
+    return;
+  }
+
+  const { error } = await supabaseClient
+    .from("posts")
+    .insert({
+      caption: caption,
+      media_url: null,
+      media_type: "text",
+      user_id: user.id
+    });
+
+  if (error) {
+    alert("Publish failed: " + error.message);
+    return;
+  }
+
+  captionBox.value = "";
+  closeModals();
+  alert("Post published successfully!");
+}
   </script> 
   
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
